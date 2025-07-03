@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hero Scroll Lock 完全版</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background: #888; /* 適当な背景色 */
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+
+    /* body.lock {
+      overflow: hidden;
+    } */
+
+    /* Heroセクション */
+    #hero {
+      display: none; /* 初期状態は非表示 */
+      height: 100vh;
+      background: url('https://picsum.photos/1920/1080') no-repeat center center;
+      background-size: cover;
+      justify-content: center;
+      align-items: center;
+      transition: opacity 0.6s ease;
+    }
+
+    #hero.active {
+      display: flex;
+    }
+
+    #hero.fade-out {
+      opacity: 0;
+    }
+
+    #hero button {
+      background: rgba(255,255,255,0.8);
+      color: #333;
+      border: none;
+      padding: 1em 2em;
+      font-size: 1.5em;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    /* メインコンテンツ */
+    #top {
+      display: none; /* 初期状態は非表示 */
+      height: 100vh;
+      background: #f2f2f2;
+      justify-content: center;
+      align-items: center;
+      font-size: 2em;
+      color: #333;
+    }
+
+    #top.active {
+      display: flex;
+    }
+  </style>
+</head>
+<body>
+  <!-- Heroセクション -->
+  <section id="hero">
+    <button id="scrollBtn">ENTER</button>
+  </section>
+
+  <!-- メインコンテンツ -->
+  <section id="top">
+    ここがメインコンテンツ
+    <a href="scroll.html">Go back to Hero</a>
+  </section>
+
+  <script>
+    // エレメントを変数に置いておく
+    const hero = document.getElementById("hero");
+    const scrollBtn = document.getElementById("scrollBtn");
+    const topSection = document.getElementById("top");
+
+    function showHero() {
+      hero.style.display = "flex";
+      // hero.classList.add("active");
+      // document.body.classList.add("lock");
+      // topSection.classList.remove("active");
+      // topSection.style.display = "none";
+      // location.hash = "";
+    }
+
+    function showTop() {
+      topSection.style.display = "flex";
+      // hero.classList.remove("active");
+      // hero.style.display = "none";
+      // document.body.classList.remove("lock");
+      // topSection.classList.add("active");
+      // topSection.style.display = "flex";
+      // history.replaceState(null, null, "#top");
+    }
+
+    function hideHero() {
+      hero.style.display = "none";
+    }
+
+    function hideTop() {
+      topSection.style.display = "none";
+    }
+
+    scrollBtn?.addEventListener("click", (e) => {
+      e.preventDefault();
+      topSection.classList.add("active");
+      topSection.style.display = "flex";
+      history.replaceState(null, null, "#top");
+      topSection.scrollIntoView({ behavior: "smooth" });
+
+      // スクロールにかかる時間（例：700ms）だけ遅らせてHeroを消す
+      setTimeout(() => {
+        hero.classList.remove("active");
+        hero.style.display = "none";
+        document.body.classList.remove("lock");
+      }, 1500);
+    });
+
+    window.addEventListener("load", () => {
+      if (location.hash === "#top") {
+        showTop();
+        window.scrollTo(0, 0);
+      } else {
+        showHero();
+      }
+    });
+
+    window.addEventListener("popstate", () => {
+      if (location.hash === "#top") {
+        showTop();
+      } else {
+        showHero();
+        window.scrollTo(0, 0);
+      }
+    });
+  </script>
+</body>
+</html>
