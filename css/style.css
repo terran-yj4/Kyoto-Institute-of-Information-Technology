@@ -1,0 +1,108 @@
+.content-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #333;
+  text-align: center;
+}
+
+.scroll-down {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: bounce 2s infinite;
+}
+
+.section {
+  padding: 100px 0;
+  background: #fff;
+}
+
+.section-bg {
+  background: #f8f9fa;
+}
+
+.card {
+  border: none;
+  border-radius: 15px;
+  transition: transform 0.3s ease;
+  /* カードのホバー時のアニメーション 0.3秒かける easeは緩急をつける */
+  background: #fff;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.card:hover {
+  transform: translateY(-3px);
+}
+
+#bg-threejs {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* セクションタイトル・テキスト左寄せ */
+.section h2,
+.section h3,
+.section h5,
+.section p,
+.section .card-title,
+.section .card-text,
+.section .list-group-item {
+  text-align: left !important;
+}
+
+.scroll-down svg {
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(10px);
+  }
+}
+
+.section-bg {
+  background: #f8f9fa;
+}
+
+footer {
+  background: #212529;
+  color: #fff;
+  padding: 40px 0;
+}
+
+footer a {
+  color: #fff;
+}
+
+.list-group-item .status {
+  display: inline-block;
+  text-align: center;
+  min-width: 50px;
+}
+
+#faculties .card-img-top {
+  height: 200px;
+  object-fit: cover;
+}
+
+#overview, #news, #faculties, #schedule, #apply, #sns{
+  scroll-margin-top: 56px;
+  /* アンカー位置調整 */
+}
