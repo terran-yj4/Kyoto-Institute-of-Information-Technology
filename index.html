@@ -12,8 +12,8 @@
 
 <body>
   <!-- ナビゲーションバー -->
-  <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top shadow">
-    <div class="container">
+  <!-- <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top shadow">
+    <div class="container-fluid">
       <a class="navbar-brand d-flex align-items-center" href="index.html">
         <img src="images/uiit_sm.jpg" alt="UIITロゴ" height="50" class="me-2">
         <span class="fw-bold fs-3">宇治情報工科大学</span>
@@ -30,7 +30,68 @@
         </ul>
       </div>
     </div>
-  </nav>
+  </nav> -->
+
+  <div class="navbar navbar-expand-lg bg-light fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <img src="images/uiit_sm.jpg" alt="UIITロゴ" height="50" class="me-2">
+        <span class="fw-bold fs-3">宇治情報工科大学</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas"
+        aria-controls="offcanvas">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvas" aria-labelledby="offcanvasLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title">Menu</h5>
+          <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" href="/">
+                <i class="bi bi-house-door-fill me-1"></i> ホーム
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">
+                <i class="bi bi-building me-1"></i> 大学紹介
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="faculties.html">
+                <i class="bi bi-journal-code me-1"></i> 学部・学科
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="admission.html">
+                <i class="bi bi-file-earmark-text me-1"></i> 入試情報
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="request.html">
+                <i class="bi bi-envelope-paper-fill me-1"></i> 資料請求
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="access.html">
+                <i class="bi bi-geo-alt-fill me-1"></i> アクセス
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link btn btn-primary text-white px-3 ms-2" href="#apply">
+                <i class="bi bi-pencil-square me-1"></i> オープンキャンパス申込
+              </a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
 
   <!-- ヒーローセクション -->
   <section id="hero" class="d-flex align-items-center justify-content-center text-center bg-dark text-white"
@@ -86,21 +147,21 @@
           <div class="card-body">
             <ul class="list-group list-group-flush">
               <li class="list-group-item d-flex justify-content-between align-items-center">
-                <span class="fw-bold">体験授業プログラム公開！</span>
+                <span class="fw-bold">5月イベント登録受付</span>
                 <div class="flex-grow-1"></div>
                 <span class="badge bg-secondary rounded-pill me-2">2025/04/10</span>
                 <span class="badge bg-secondary rounded-pill status d-none d-md-inline-block">終了</span>
               </li>
               <li class="list-group-item d-flex justify-content-between align-items-center">
-                <span class="fw-bold">参加者特典グッズ決定！</span>
+                <span class="fw-bold">体験授業プログラム公開</span>
                 <div class="flex-grow-1"></div>
-                <span class="badge bg-secondary rounded-pill me-2">2025/04/05</span>
-                <span class="badge bg-secondary rounded-pill status d-none d-md-inline-block">受付中</span>
+                <span class="badge bg-primary rounded-pill me-2">2025/06/20</span>
+                <span class="badge bg-success rounded-pill status d-none d-md-inline-block">-</span>
               </li>
               <li class="list-group-item d-flex align-items-center">
-                <span class="fw-bold">お申し込み受付中</span>
+                <span class="fw-bold">8月開催オープンキャンパス事前登録受付</span>
                 <div class="flex-grow-1"></div>
-                <span class="badge bg-primary rounded-pill me-2">2025/04/05</span>
+                <span class="badge bg-primary rounded-pill me-2">2025/07/10</span>
                 <span class="badge bg-success rounded-pill status d-none d-md-inline-block">受付中</span>
               </li>
 
@@ -111,37 +172,41 @@
     </section>
 
     <!-- 体験授業紹介 -->
-    <section class="trial-class">
+    <section class="trial-class section-bg">
       <div class="container">
         <h2 class="mb-4 fw-bold">体験授業ラインナップ</h2>
         <div class="row g-4">
           <div class="col-md-4">
             <div class="card h-100 shadow">
-              <div class="card-body">
+              <div class="card-body d-flex flex-column">
                 <h5 class="card-title">AI入門</h5>
                 <p class="card-text">AIの仕組みを体験！簡単な画像認識を実際にプログラミングします。</p>
+                <a href="#" class="btn btn-primary btn-sm mt-auto">申し込む</a>
               </div>
             </div>
           </div>
           <div class="col-md-4">
             <div class="card h-100 shadow">
-              <div class="card-body">
+              <div class="card-body d-flex flex-column">
                 <h5 class="card-title">Web開発体験</h5>
                 <p class="card-text">HTML/CSS/JavaScriptを使ったサイト制作に挑戦！初心者大歓迎です。</p>
+                <a href="#" class="btn btn-primary btn-sm mt-auto">申し込む</a>
               </div>
             </div>
           </div>
           <div class="col-md-4">
             <div class="card h-100 shadow">
-              <div class="card-body">
+              <div class="card-body d-flex flex-column">
                 <h5 class="card-title">IoT実験</h5>
                 <p class="card-text">センサーを使ったIoTのデータ収集を体験しよう！</p>
+                <a href="#" class="btn btn-primary btn-sm mt-auto">申し込む</a>
               </div>
             </div>
           </div>
         </div>
       </div>
     </section>
+
 
     <!-- 学部紹介 -->
     <section id="faculties" class="py-5 section-bg">
@@ -178,17 +243,16 @@
 
     <!-- スケジュール -->
     <section id="schedule" class="py-5 section-bg">
-      <div class="container text-center">
+      <div class="container">
         <h2 class="mb-4 fw-bold">当日のスケジュール</h2>
         <p class="mb-4">オープンキャンパス当日の詳しいプログラムをご覧いただけます。</p>
         <a href="schedule.html" class="btn btn-primary btn-lg">スケジュールを見る</a>
       </div>
     </section>
 
-
     <!-- 申し込み -->
-    <section id="apply" class="py-5">
-      <div class="container text-center">
+    <section id="apply" class="py-5 section-bg">
+      <div class="container">
         <h2 class="mb-4 fw-bold">オープンキャンパスに申し込む</h2>
         <p class="mb-4">体験授業やキャンパスツアーへの参加申し込みはこちらから！</p>
         <a href="#" class="btn btn-lg btn-primary">申し込みフォームへ</a>
@@ -197,7 +261,7 @@
 
     <!-- SNS -->
     <section id="sns" class="py-5 section-bg">
-      <div class="container text-center">
+      <div class="container">
         <h2 class="mb-4 fw-bold">オープンキャンパス最新情報</h2>
         <p class="mb-3">SNSでも最新情報を発信中！ぜひフォローしてください。</p>
         <a href="#" class="btn btn-outline-dark me-2"><i class="bi bi-twitter"></i> Twitter</a>
