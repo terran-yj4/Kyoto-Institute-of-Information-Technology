@@ -73,8 +73,9 @@
   </div>
 
   <!-- ヒーローセクション -->
-  <!-- 
+  <!--
   sectionのheightを100vhにすることで画面全体で表示することを指定、文字は中央に揃え、申し込みはこちらのボタンはprimary色(青色)で目立たせている。
+  (Three.jsの描画を行うためのcanvasを追加)
   CGの授業で学んだthree.jsを背景で実行し、アニメーションを描画している。
   また、このセクションの下部では、下向きの>>マークもアニメーションさせることで、
   画面いっぱいに広がっているアニメーションの下にスクロールすればコンテンツがあることを示している。
@@ -132,7 +133,7 @@
         <h2 class="mb-4 fw-bold">オープンキャンパス お知らせ</h2>
         <!-- お知らせはまとまってリストになっていることが多いように感じたため、カードを作成し、その中に1要素ごとにRowを形成するようにした。
         また、そのお知らせの配信日、加えてその内容が期限のあるものの場合、有効期限ないかどうかを右側に表示することにした。
-        終了してしまっている時はactiveではないので、bg-secondary(グレー)で、受付中などの場合はactiveなのでbg-success(緑)で背景色をつけた。
+        終了してしまっている時はactiveではないので、bg-secondary(グレー)で、受付中などの場合はactiveなのでbg-success(緑から茶に変更済)で背景色をつけた。
         また、お知らせは多くを表示すると多くのエリアをとってしまうので、最重要/最新の3件のみを表示するデザインにした。
         整列するように、右側の日付とステータス(受付中など)の幅は全て揃えて右揃えに、
         肝心の内容は左揃えにすることで、目的の項目を見つけやすくすることを狙っている。-->
@@ -272,10 +273,16 @@
     </section>
   </div>
 
-  <!-- Three.js -->
+  <!-- CGの授業で学んだThree.jsを用いてヒーローの部分に3DCGを読み込んだ。 -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <script>
+    /**
+     * scene(Three.jsを使う上での土台みたいなもの)を作成し、heroの要素を取得する。
+     * カメラとレンダラーを設定し、レンダラーの背景色やサイズなどを設定。
+     * ジオメトリとマテリアルからメッシュを作成し、シーンに追加。
+     * 最後にアニメーションをさせるため、カメラの位置を設定し、アニメーション関数を定義。
+     */
     const scene = new THREE.Scene();
     const hero = document.getElementById('hero');
     const camera = new THREE.PerspectiveCamera(75, hero.clientWidth / hero.clientHeight, 0.1, 1000);
