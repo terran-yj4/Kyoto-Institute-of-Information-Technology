@@ -1,3 +1,52 @@
+body {
+  /* background-color: black; */
+  background-color: #f8f1e5; /* 全体の背景色 */
+  color: #4a3b28; /* 基本テキスト色 */
+}
+
+.navbar,
+.offcanvas-header {
+  background-color: #8b5e3c; /* ナビゲーションバー背景 */
+}
+
+.navbar .nav-link,
+.offcanvas .nav-link,
+.navbar-brand span {
+  color: #3d444c !important; /* ナビ文字白 */
+}
+
+.navbar .nav-link.active {
+  color: #212529 !important; /* アクティブ時強調色 */
+}
+
+
+.btn-primary {
+  background-color: #8b5e3c;
+  border-color: #8b5e3c;
+}
+
+.btn-primary:hover {
+  background-color: #b98c65;
+  border-color: #b98c65;
+}
+
+footer {
+  background: #8b5e3c;
+  color: #fff;
+}
+
+footer a {
+  color: #f8f1e5;
+}
+
+.badge.bg-primary {
+  background-color: #8b5e3c !important;
+}
+
+.badge.bg-success {
+  background-color: #b98c65 !important;
+}
+
 .content-overlay {
   position: absolute;
   width: 100%;
@@ -23,17 +72,27 @@
   background: #fff;
 }
 
-.section-bg {
+.section-bga {
   background: #f8f9fa;
 }
 
-.card {
+.carda {
   border: none;
   border-radius: 15px;
   transition: transform 0.3s ease;
   /* カードのホバー時のアニメーション 0.3秒かける easeは緩急をつける */
   background: #fff;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.section-bg {
+  background: #fdfaf5; /* 淡いベージュで優しい雰囲気 */
+}
+
+.card {
+  background: #fff8f0; /* カードの背景を和風ベージュ */
+  box-shadow: 0 5px 15px rgba(139, 94, 60, 0.2);
+  transition: transform 0.3s ease;
 }
 
 .card:hover {
@@ -105,4 +164,31 @@ footer a {
 #overview, #news, #faculties, #schedule, #apply, #sns{
   scroll-margin-top: 56px;
   /* アンカー位置調整 */
+}
+
+.list-group-item {
+  background-color: #fff8f0;
+  /* border: none; */
+}
+
+
+#loadMoreBtn {
+  color: #8b5e3c;
+  border-color: #8b5e3c;
+}
+
+#loadMoreBtn:hover {
+  color: #fff;
+  background-color: #8b5e3c;
+  border-color: #8b5e3c;
+}
+
+.card-faculty-primary {
+  background-color: #8b5e3c;
+  color: #fff;
+}
+
+.card-faculty-secondary {
+  background-color: #b98c65;
+  color: #fff;
 }
